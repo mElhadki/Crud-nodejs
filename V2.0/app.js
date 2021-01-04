@@ -11,7 +11,7 @@ const connection = mysql.createConnection({
 
     host:'localhost',
     user:'root',
-    password:'',
+    password:'admin1',
     database:'crudnode'
 
 });
@@ -35,5 +35,5 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.listen(port, () => {console.log(`listening on port ${port}!`);
-//opn("http://localhost:8000/vue/Dashboard.html")
+opn("http://localhost:8000/vue/Dashboard.html")
 });

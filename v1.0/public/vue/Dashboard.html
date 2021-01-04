@@ -11,8 +11,78 @@
 <title>cetegory</title>
 </head>
 <body>
+  
+   <table class="table">
+    <p><strong>other items</strong></p>
+  </div>
+  <a href="addc" class="btn btn-info btn-lg" style="
+ margin-top:-3%; 
+  margin-left: 40%;
+">Add new Category</a>
+    <thead>
+        <tr>
+          <th style="width: 15%;text-align: center;">id</th>
+            <th style="width: 15%;text-align: center;">name</th>
+           <th solspan="2" style="width: 20%;text-align: center;"></th>
+        </tr>
+    </thead>
+    <tbody>
+      <% for(var i = 0;i < items.length; i++){
 
+          %>
+      
     
+            <tr>
+                <td style="width: 15%;text-align: center;"><a href="/Dashboard/ " style="color: black; text-decoration: none;">
+                  <%= items[i].id %></a></td>
+                <td style="width: 15%;text-align: center;"><%= items[i].name %> </td>
+                <td style="width: 15%;text-align: center;"> </td>
+                
+                <td solspan="2" style="width: 20%;text-align: center;">
+                  <button type="submit" name="btn_edit" data-toggle="modal" data-target="" class="btn btn-success btn-sm btn-circle btnedit">
+                    Edit
+                </button>
+         
+                    <a href="/delete/<%= items[i].id %>" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            <%}%>
+    </tbody>
+</table> 
+
+ <!-- edit model  -->
+ <div id="editmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade" style="display: none;">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <form  action="/editC" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="id" id="id" class="form-control" placeholder="you text">
+         <div class="form-group">
+         <label for="exampleInputEmail1">category</label>
+         <input type="text" name="name" value="" class="form-control" id="name" aria-describedby="emailHelp">
+        </div>
+       
+          <select  name="id" id="id" class="form-control" aria-describedby="emailHelp">
+              <% for(item of items2){%>
+              <option value="<%= item.id %>"><%= item.name %></option>
+              <%}%>
+            </select>
+         </div>
+        </div>  
+        <div class="form-group">
+          <label for="exampleInputEmail1">id</label>
+           <select  name="id" id="id" class="form-control">
+              <% for(item of items3){%>
+              <option value="<%= item.id %>"><%= item.name %></option>
+              <%}%>
+            </select>
+         </div>
+    
+       <button type="submit"  name="submit" value="ADD" class="btn btn-primary">Ajoute</button>
+  </form>   
+      </div>
+  </div>
+</div>  
+
     
     <nav class="menu" tabindex="0">
         <div class="smartphone-menu-trigger"></div>
@@ -29,6 +99,26 @@
     <main>
    
     </main>
+
+    <!-- end edit modal  -->   
+<script>
+  $(document).ready(function() {
+      $('.btnedit').on('click', function() {
+          $('#editmodal').modal('show');
+
+          $tr = $(this).closest('tr');
+          var data = $tr.children("td").map(function() {
+              return $(this).text();
+          }).get();
+
+          console.log(data);
+
+          $('#id').val(data[0]);
+          $('#name').val(data[1]);
+        
+      });
+  });
+</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.min.js"></script>

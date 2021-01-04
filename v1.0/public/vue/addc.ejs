@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link rel="stylesheet" href="css/Dashboard.css">
+<title>cetegory</title>
+</head>
+<body>
+
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12"> 
+        <div class="panel">
+          <div class="panel-body">
+            <div class="row">           
+              <form  action="/addC" method="POST" enctype="multipart/form-data">
+               <div class="form-group">
+               <label for="exampleInputEmail1">id </label>
+               <input type="text" name="id" value="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">name</label>
+                <input type="text" name="name" value="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+               </div>
+              
+             <button type="submit"  name="submit" value="ADD" class="btn btn-primary">Ajoute</button>
+        </form>                            
+         </div><!--/col-12-->
+    </div>
+  </div>                                     
+
+    <nav class="menu" tabindex="0">
+        <div class="smartphone-menu-trigger"></div>
+      <header class="avatar">
+            <img src="images/group.png" />
+        <h2>Admin</h2>
+      </header>
+        <ul>
+        <li tabindex="0" class="icon-customers"><a href="Dashboard.html"><span>Category</span></a></li>
+        <li tabindex="0" class="icon-users"><a href="product.html"><span>Product</span></a></li>
+      </ul>
+    </nav>
+    
+    <main>
+   
+    </main>
+
+   
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.min.js"></script>
+</body>
+</html>

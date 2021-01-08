@@ -21,8 +21,8 @@ Step 3 : Add follwoing code in app.js
 
 			// Server Listening
 		app.listen(port, () => {console.log(`listening on port ${port}!`);
-//opn("http://localhost:8000/vue/Dashboard.html")
-});
+                 opn("http://localhost:8000/vue/Dashboard.html")
+                   });
 			
 			nodemon app (OR) npm start
 		

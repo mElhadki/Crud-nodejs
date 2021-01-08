@@ -23,5 +23,5 @@ const ProductRoutes = require("./Routes/products")(app);
 const CategoryRoutes = require("./Routes/categories")(app);
 
 app.listen(port, () => {console.log(`listening on port ${port}!`);
-//opn("http://localhost:8000/vue/Dashboard.html")
+opn("http://localhost:8000/vue/Dashboard.html")
 });

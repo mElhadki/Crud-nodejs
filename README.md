@@ -1,63 +1,30 @@
+## How To Run??
 
---------------------------------------------------------------------------
-|             CRUD Operation using NodeJS / ExpressJS / MySQL            |
---------------------------------------------------------------------------
+To run this project you must have 
 
-Step 1 : install nodejs in your system and run follwoing comment 
-			npm init
-		
-Step 2 : Install Requred packages using NPM
+```
+    installed nodejs on your PC.
+```
 
-			npm install --save express mysql body-parser opn
-			npm install -g nodemon (optional - used to run app.js automatically while any file content changes)
-		
-Step 3 : Add follwoing code in app.js
-		
-			const express = require('express');
-			const bodyParser = require('body-parser');
-			const mysql = require('mysql');
-      const opn = require('opn');
-			const app = express();
+follow the following steps
 
-			// Server Listening
-		app.listen(port, () => {console.log(`listening on port ${port}!`);
-                 opn("http://localhost:8000/vue/Dashboard.html")
-                   });
-			
-			nodemon app (OR) npm start
-		
-Step 4 : Create Database Connection 
+```
+1st Step:  Extract file
+2st Step : Open the folder with any IDE(VScode)
+3st Step : install node module with this command << npm install - -save >>
 
-			const mysql=require('mysql');
-			
-			const connection=mysql.createConnection({
-			  host:'localhost',
-			  user:'root',
-			  password:'admin1',
-			  database:'crudnode'
-			});
-			
-			connection.connect(function(error){
-			  if(!!error) console.log(error);
-			  else console.log('Database Connected!');
-			}); 
+```
+Now Connecting Database
 
-Setp 5 : Define view engin / public path / view files path / bodyParser
+```
+ 4th Step: Open a browser and go to URL "http://localhost/phpmyadmin/"
+ 5th Step: Then, click on the databases tab
+ 6th Step: Create a database naming "crudnode" and then click on the import tab
+ 7th Step: Click on browse file and select "crudnode.sql file which is inside the folder
+ 8th Step: Click on go.
+```
+After Creating Database,
+```
+ 9th Step: open cmd and tap npm start 
+```
 
-			//set view engine
-			app.use(bodyParser.json());
-			app.use(bodyParser.urlencoded({ extended: false }));
-
-Setp 6 : Routes Product/categoey
-			
-		
-      const ProductRoutes = require("./Routes/products")(app);
-      const CategoryRoutes = require("./Routes/categories")(app);
-
-Setp 7 : Run a server and check with Browser
-
-			npm start (OR) nodemon app
-
-			http://localhost:8000/vue/Dashboard.html
-			
-Step 8 : Get value from database and show in HTML table using ExpressJS / MySQL
